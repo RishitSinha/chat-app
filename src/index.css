@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.1);
+}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgba(0,0,0,0.6);
+}
+
+.login{
+    background: coral;
+    max-width: 500px;
+    width: 80vw;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate( -50% , -50% );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.loginFormSwitcher{
+    flex:1;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+.loginFormSwitcher button{
+    flex:1;
+    height: 100%;
+    background: lemonchiffon;
+    border: none;
+    cursor: pointer;
+}
+.loginFormSwitcher button:hover{
+    background: #e6e1b7;
+}
+.loginFormWrapper{
+    flex:5;
+    width: 80%;
+}
+.signIn, .signUp{
+    height: 100%;
+    width: 100%;
+}
+
+.signIn form, .signUp form{
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 0 0;
+}
+
+.login input{
+    height: 6vh;
+    margin: 1vh 0;
+    width: 100%;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    padding: 0 3vh;
+    font-size: 1.2em;
+    background: rgba(255,255,255,0.5);
+    transition: all 500ms ease;
+}
+
+.login input:focus{
+    background: rgba(255,255,255,0.9);
+}
+
+
+.chat{
+    height: 100vh;
+    width:100vw;
+    display: block;
+    background: forestgreen;
+}
+
+.getPartner{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50% , -50% );
+    max-width: 800px;
+    width: 80%;
+}
+
+.getPartner h1{
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-size: 4em;
+    line-height: 1.5;
+}
+
+.getPartner h2{
+    text-align: center;
+    font-size: 2em;
+    line-height:1.5;
+    opacity:0.5;
+}
+
+.getPartner form{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.getPartner input{
+    height: 6vh;
+    margin: 2vh 0;
+    width: 75%;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    padding: 0 3vh;
+    font-size: 1.2em;
+    text-align: center;
+    background: rgba(255,255,255,0.5);
+    transition: all 500ms ease;
+}
+
+.getPartner input[type="submit"]{
+    width:auto;
+}
+
+
+.chatbox{
+    height: 80vh;
+    width:80vw;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate( -50% , -50% );
+    background: rgba(0,0,0,0.5);
+    overflow: auto;
+}
+
+.chatHeader{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 0 25px;
+}
+
+.chatHeader h2{
+    opacity:0.5;
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+}
+
+.chatHeader h2:hover{
+    opacity:0.75;
+}
+
+.messageContainer{
+    height:60vh;
+    width: 100%;
+    overflow: auto;
+}
+
+.message{
+    display: flex;
+    align-items:center;
+    padding: 25px 0;
+    margin: 10px 20px;
+    justify-content: flex-end;
+}
+.message.received{
+    justify-content: flex-start;
+}
+.message .icon{
+    height:75px;
+    width:75px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.message .messageBox{
+    max-width: 60%;
+    background: coral;
+    padding:15px 30px;
+    border-radius: 10px;
+}
+
+.messageInput{
+    width:100%;
+    height: 10vh;
+    background: darkolivegreen;
+}
+
+.messageInput form{
+    height: 100%;
+    width:100%;
+    display: flex;
+}
+
+.messageInput textarea{
+    flex: 5;
+    resize: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+}
+.messageInput input[type="submit"]{
+    flex: 1;
+}
+
+@media screen and (max-device-width: 480px){
+    .loginFormSwitcher{
+        width: 100%;
+    }
+    .loginFormWrapper{
+        width:100%;
+    }
+    .login input{
+        font-size:1.1em;
+    }
+    .getPartner h1{
+        font-size:3em;
+    }
+    .getPartner h2{
+        font-size:1.5em;
+    }
+}
+
