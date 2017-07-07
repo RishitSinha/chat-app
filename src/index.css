@@ -314,6 +314,35 @@ input[type="submit"]:active{
     background-size: contain;
 }
 
+.singles{
+    background: hsla(0,0%,100%,.5);
+    margin: 0 5px;
+    border-radius: 10000px;
+    border: none;
+    font-size: 1.1em;
+    padding: 10px 1em;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.waitingSingles{
+    width: 80%;
+    padding: 0;
+    height: calc(20px + 1.1em + 40px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    transform: translate(-50%);
+    left: 50%;
+    margin: 10px 0;
+    white-space: nowrap;
+}
+
+.singles:hover{
+    background: rgba(255,255,255,0.75);
+    transform: scale(1.025);
+}
+
 @media screen and (max-device-width: 480px){
     .loginFormSwitcher{
         width: 100%;
