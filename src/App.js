@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
 import Login from "./Login/Login";
 import Chat from "./Chat/Chat";
-
+import $ from "jquery";
 class App extends Component {
     constructor(){
         super();
         this.state={
             username: '',
             password: '',
-            loggedIn: true,
+            loggedIn: false,
         }
+    }
+    login(name){
+
+         this.setState({username:name,loggedIn:true});
+         console.log(this.state.username);
     }
     render() {
         return (
@@ -21,8 +26,9 @@ class App extends Component {
                 }
                 {
                     this.state.loggedIn ?
-                        <Chat/>
-                        :<Login/>
+                        <Chat username={this.state.username}/>
+                        :<Login
+                         login={this.login.bind(this)}/>
                 }
             </div>
         );

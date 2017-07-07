@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Chatbox from "./Chatbox";
 import GetPartner from "./GetPartner";
-
+import $ from "jquery";
 export default class Chat extends Component{
     constructor(){
         super();
@@ -10,60 +10,13 @@ export default class Chat extends Component{
             chatData: [
                 {
                     sender: 'User 1',
-                    message: 'Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text Sample Message Text '
+                    message: 'Sample Message Text '
                 },
                 {
                     sender: 'User 2',
                     message: 'Sample Message Text'
                 },
-                {
-                    sender: 'User 1',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 2',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 1',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 2',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 1',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 2',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 1',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 2',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 1',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 2',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 1',
-                    message: 'Sample Message Text'
-                },
-                {
-                    sender: 'User 2',
-                    message: 'Sample Message Text'
-                },
+               
             ],
         }
     }
@@ -74,7 +27,7 @@ export default class Chat extends Component{
                 {
                     this.state.partner ?
                         <Chatbox partner={this.state.partner} breakup={this.breakup.bind(this)} chatData={this.state.chatData} sendMessage={this.sendMessage.bind(this)} />
-                        :<GetPartner setPartner={this.setPartner.bind(this)} />
+                        :<GetPartner setPartner={this.setPartner.bind(this)} username={this.props.username}/>
                 }
             </div>
         )
@@ -93,6 +46,19 @@ export default class Chat extends Component{
             sender: 'User 1',
             message: message,
         });
+            $.ajax({ 
+  url: '../Backend/Controller/ChatController.php',
+  type: "POST",
+          
+          data: {function_name:'sendMsg',msg:message,reciever:this.state.partner},
+          dataType: 'json',
+           success: function(data) {
+             
+}.bind(this),
+            error:  function(data) {
+        console.log(data);
+}.bind(this),
+        }); 
 
         this.setState({chatData: chatData});
     }

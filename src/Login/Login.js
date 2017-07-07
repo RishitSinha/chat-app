@@ -20,13 +20,17 @@ export default class Login extends Component{
                 <div className="loginFormWrapper">
                     {
                         this.state.registered ?
-                            <SignIn/>
+                            <SignIn
+                            setlogin={this.setlogin.bind(this)}/>
                             :<SignUp/>
                     }
                 </div>
 
             </div>
         )
+    }
+    setlogin(name){
+         this.props.login(name);
     }
 }
 
