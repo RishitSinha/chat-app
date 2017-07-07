@@ -14,7 +14,8 @@ export default class Chatbox extends Component{
             <div className="chatbox">
                 <div className="chatHeader">
                     <h1>{this.props.partner}</h1>
-                    <h2 onClick={this.props.breakup}> Chat with Someone else?</h2>
+                    <div className="icon change" title="Chat with Someone Else?" onClick={this.props.breakup}></div>
+                    <div className="icon logout" title="Logout"></div>
                 </div>
                 <MessageBox chatData={this.props.chatData} />
                 <div className="messageInput">
