@@ -19,8 +19,8 @@ export default class Chatbox extends Component{
                 <MessageBox chatData={this.props.chatData} />
                 <div className="messageInput">
                     <form onSubmit={this.sendMessage.bind(this)}>
-                        <textarea placeholder="Message..." ref="message"/>
-                        <input type="submit" />
+                        <textarea placeholder="Message..." ref="message" />
+                        <input type="submit" value="Send" />
                     </form>
                 </div>
             </div>

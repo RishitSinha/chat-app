@@ -33,7 +33,6 @@ class Message extends Component{
         if(this.props.sender != this.props.partner){
             this.setState({sent: true})
         }
-        console.log(this.props.sender);
     }
 
     render(){

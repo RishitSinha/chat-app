@@ -8,13 +8,17 @@ class App extends Component {
         this.state={
             username: '',
             password: '',
-            loggedIn: false,
+            loggedIn: true,
         }
     }
     render() {
         return (
             <div className="App">
-                <Heading />
+                {
+                    !this.state.loggedIn ?
+                        <Heading />
+                        :<div />
+                }
                 {
                     this.state.loggedIn ?
                         <Chat/>
@@ -36,7 +40,9 @@ class Heading extends Component{
     render(){
         return(
             <div className="heading">
-
+                <h1>
+                    Chat App
+                </h1>
             </div>
         )
     }

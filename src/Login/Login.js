@@ -14,8 +14,8 @@ export default class Login extends Component{
         return(
             <div className="login">
                 <div className="loginFormSwitcher">
-                    <button onClick={() => this.setState({registered: true})}>SignIn</button>
-                    <button onClick={() => this.setState({registered: false})}>SignUp</button>
+                    <button onClick={() => this.setState({registered: true}) } style={this.state.registered ? {background:'rgba(0,0,0,0.5)'}:{}}>SignIn</button>
+                    <button onClick={() => this.setState({registered: false})} style={this.state.registered ? {}:{background:'rgba(0,0,0,0.5)'}}>SignUp</button>
                 </div>
                 <div className="loginFormWrapper">
                     {

@@ -15,7 +15,7 @@ export default class GetPartner extends Component{
                 <h2>Enter their username.</h2>
                 <form onSubmit={this.savePartner.bind(this)}>
                     <input type="text" placeholder="Username" ref="username" />
-                    <input type="submit" />
+                    <input type="submit" value="Start Chatting!" />
                 </form>
             </div>
         )
