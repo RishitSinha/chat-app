@@ -17,7 +17,12 @@ if(isset($_POST['function_name']))
 		$response = $chat->sendMsg($data);
 		print_r($response);
 	}
-
+	if($calling_function == 'getMsg')
+	{ $data['partner']=$_POST['partner'];
+    
+		$response = $chat->getMsg($data);
+		print_r($response);
+	}
 }
 
 else

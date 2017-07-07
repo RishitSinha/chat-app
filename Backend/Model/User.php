@@ -38,24 +38,39 @@ class User
 			return json_encode($e);
 		}
 	}
-	public function login($data)
+	public function signup($data)
 	{
 			try
+			{	$query = $this->_db->prepare("SELECT * FROM login  WHERE name=:name OR email=:email");
+			$query->execute(array(
+					":name" => $data['name'],
+					":email" => $data['email']
+				));
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
+			if(count($result) > 0){
+				 $response['msg'] = "user aldready exists";
+				$response['code'] = 1;
+				return json_encode($response);
+				return json_encode($result);
+			}
+			else
 			{
-				$query = $this->_db->prepare("INSERT IGNORE INTO login (email,name,image,online) VALUES (:email,:name,:image,1) ON DUPLICATE KEY UPDATE online = 1");
+				$query = $this->_db->prepare("INSERT INTO login (email,name,pass) VALUES (:email,:name,:pass)");
 				$query->execute(array(
 								":email" => $data['email'],
 								":name"=>$data['name'],
-								":image"=>$data['image'],
+								":pass"=>$data['pass'],
 				));
     
         
         $_SESSION['name']=$data['name'];
         $_SESSION['email']=$data['email'];
-        $_SESSION['image']=$data['image'];
+     
         	$response=  $_SESSION['name'];
 				
         return json_encode($response);
+			}
+				
 			}
 			catch(PDOException $e)
 			{

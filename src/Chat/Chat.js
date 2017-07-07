@@ -21,12 +21,13 @@ export default class Chat extends Component{
         }
     }
 
+
     render(){
         return(
             <div className="chat">
                 {
                     this.state.partner ?
-                        <Chatbox partner={this.state.partner} breakup={this.breakup.bind(this)} chatData={this.state.chatData} sendMessage={this.sendMessage.bind(this)} />
+                        <Chatbox partner={this.state.partner} breakup={this.breakup.bind(this)} username={this.props.username} chatData={this.state.chatData} sendMessage={this.sendMessage.bind(this)} />
                         :<GetPartner setPartner={this.setPartner.bind(this)} username={this.props.username}/>
                 }
             </div>

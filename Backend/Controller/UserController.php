@@ -5,12 +5,12 @@ if(isset($_POST['function_name']))
 {
 	$calling_function = $_POST['function_name'];
 
-	if($calling_function == 'login')
+	if($calling_function == 'signup')
 	{
     $data['email'] = $_POST['email'];
-    $data['name'] = $_POST['name'];
-    $data['image'] = $_POST['image'];
-		$response = $user->login($data);
+    $data['name'] = $_POST['username'];
+    $data['pass'] = $_POST['password'];
+		$response = $user->signup($data);
 		print_r($response);
 	}
 		if($calling_function == 'logins')

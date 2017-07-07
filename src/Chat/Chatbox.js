@@ -5,11 +5,11 @@ export default class Chatbox extends Component{
     constructor(){
         super();
         this.state = {
-
+refresh:'1'
         }
     }
 
-    render(){
+    render(){console.log(this.state.refresh);
         return(
             <div className="chatbox">
                 <div className="chatHeader">
@@ -17,7 +17,7 @@ export default class Chatbox extends Component{
                     <div className="icon change" title="Chat with Someone Else?" onClick={this.props.breakup}></div>
                     <div className="icon logout" title="Logout"></div>
                 </div>
-                <MessageBox chatData={this.props.chatData} />
+                <MessageBox refresh={this.state.refresh} partner={this.props.partner} chatData={this.props.chatData} username={this.props.username} />
                 <div className="messageInput">
                     <form onSubmit={this.sendMessage.bind(this)}>
                         <textarea placeholder="Message..." ref="message" />
@@ -32,5 +32,8 @@ export default class Chatbox extends Component{
         e.preventDefault();
         this.props.sendMessage(this.refs.message.value);
         this.refs.message.value = '';
+          this.setState({refresh:Math.random()});
+
+
     }
 }

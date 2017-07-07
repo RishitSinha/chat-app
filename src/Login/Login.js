@@ -22,7 +22,8 @@ export default class Login extends Component{
                         this.state.registered ?
                             <SignIn
                             setlogin={this.setlogin.bind(this)}/>
-                            :<SignUp/>
+                            :<SignUp
+                             setlogin={this.setlogin.bind(this)}/>
                     }
                 </div>
 

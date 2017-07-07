@@ -60,9 +60,9 @@ export default class GetPartner extends Component{
 
                      <ul>
       {
-            this.state.onlinePeeps.map(onlinePeeps => 
+            this.state.onlinePeeps.map(onlinePeeps => this.props.username!=onlinePeeps.name?
               <button key={onlinePeeps.id}  refs="username" value={onlinePeeps.name} onClick={() => this.savePartner2(onlinePeeps.name)}>{onlinePeeps.name}</button>
-            )
+           :<div></div> )
           }
     </ul>
             </div>
