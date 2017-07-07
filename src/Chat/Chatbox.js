@@ -15,7 +15,7 @@ refresh:'1'
                 <div className="chatHeader">
                     <h1>{this.props.partner}</h1>
                     <div className="icon change" title="Chat with Someone Else?" onClick={this.props.breakup}></div>
-                    <div className="icon logout" title="Logout"></div>
+                    <div className="icon logout" title="Logout" onClick={this.props.logout}></div>
                 </div>
                 <MessageBox refresh={this.state.refresh} partner={this.props.partner} chatData={this.props.chatData} username={this.props.username} />
                 <div className="messageInput">

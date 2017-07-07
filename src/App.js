@@ -16,7 +16,12 @@ class App extends Component {
          this.setState({username:name,loggedIn:true});
          console.log(this.state.username);
     }
-    render() {
+    logouts(){
+        console.log("sbdz");
+        this.setState({username:'',loggedIn:false});
+    }
+
+    render() {console.log(this.state.loggedIn);
         return (
             <div className="App">
                 {
@@ -26,7 +31,7 @@ class App extends Component {
                 }
                 {
                     this.state.loggedIn ?
-                        <Chat username={this.state.username}/>
+                        <Chat username={this.state.username} logouts={this.logouts.bind(this)}/>
                         :<Login
                          login={this.login.bind(this)}/>
                 }
