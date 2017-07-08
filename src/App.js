@@ -14,10 +14,19 @@ class App extends Component {
 
     login(name) {
         this.setState({username: name, loggedIn: true});
+        localStorage.setItem("username", name);
     }
 
     logouts() {
         this.setState({username: '', loggedIn: false});
+        localStorage.removeItem("username");
+    }
+
+    componentDidMount(){
+        let username = localStorage.getItem("username");
+        if(username){
+            this.setState({username: username, loggedIn: true});
+        }
     }
 
     render() {

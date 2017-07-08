@@ -30,7 +30,6 @@ export default class Login extends Component {
                             setlogin={this.setlogin.bind(this)}/>
                     }
                 </div>
-
             </div>
         )
     }
