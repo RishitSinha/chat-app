@@ -41,6 +41,7 @@ export default class Chat extends Component {
     }
 
     sendMessage(message) {
+        if(message!=""){
         let chatData = this.state.chatData;
         chatData.push({
             sender: 'User 1',
@@ -61,4 +62,6 @@ export default class Chat extends Component {
 
         this.setState({chatData: chatData});
     }
+    else
+        { alert("Dont send an empty message");}}
 }

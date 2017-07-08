@@ -42,11 +42,11 @@ export default class MessageBox extends Component {
             success: function (data) {
 
                 this.setState({chatData: data});
-                console.log(data);
+              
 
             }.bind(this),
             error: function (data) {
-                console.log(data);
+               
             }.bind(this),
         });
 

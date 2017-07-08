@@ -27,7 +27,7 @@ export default class SignIn extends Component {
             data: {function_name: 'logins', username: this.refs.username.value, password: this.refs.password.value},
             dataType: 'json',
             success: function (data) {   if (data['code'] == 1) {
-                    alert("no user found");
+                    alert("Username or Password Error (Might not exist or is/are worng)");
                 }
                 else {
                     this.props.setlogin(this.refs.username.value);
